@@ -2,14 +2,14 @@
 
 
 
-WG Working Group                                              Y. N. Here
-Internet-Draft                                    Your Organization Here
-Intended status: Informational                               1 July 2025
-Expires: 2 January 2026
+v6ops                                                        N. Buraglio
+Internet-Draft                                                R. Rearden
+Intended status: Informational                   Energy Sciences Network
+Expires: 2 January 2026                                      1 July 2025
 
 
-                           TODO - Your title
-                  draft-todo-yourname-protocol-latest
+    Current State of CLAT Use and Performance on Non-Mobile Systems
+                  draft-nbrr-v6ops-clat-status-latest
 
 Abstract
 
@@ -20,16 +20,17 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-todo-yourname-
-   protocol/.
+   https://github.com/buraglio/draft-v6ops-nbrr-clat-status.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-nbrr-v6ops-clat-status/.
 
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   Discussion of this document takes place on the v6ops Working Group
+   mailing list (mailto:v6ops@ietf.org), which is archived at
+   https://datatracker.ietf.org/wg/v6ops/about/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/v6ops/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/buraglio/draft-v6ops-nbrr-clat-status.
 
 Status of This Memo
 
@@ -70,7 +71,7 @@ Table of Contents
    4.  IANA Considerations
    5.  Normative References
    Acknowledgments
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -107,8 +108,13 @@ Acknowledgments
 
    TODO acknowledge.
 
-Author's Address
+Authors' Addresses
 
-   Your Name Here
-   Your Organization Here
-   Email: your.email@example.com
+   Nick Buraglio
+   Energy Sciences Network
+   Email: buraglio@forwardingplane.net
+
+
+   Ryan Rearden
+   Energy Sciences Network
+   Email: reardenrt@gmail.com
