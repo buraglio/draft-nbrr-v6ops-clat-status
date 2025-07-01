@@ -9,8 +9,8 @@ number:
 date:
 consensus: true
 v: 3
-area: ops
-workgroup: v6ops
+area: "Operations and Management"
+workgroup: "IPv6 Operations"
 keyword:
  - IPv6
  - DNS64
@@ -18,12 +18,12 @@ keyword:
  - NAT64
  - CLAT
 venue:
-  group: v6ops
-  type: Working Group
-  mail: v6ops@ietf.org
-  arch: https://datatracker.ietf.org/wg/v6ops/about/
-  github: "buraglio/draft-v6ops-nbrr-clat-status"
-  latest: "https://github.com/buraglio/draft-v6ops-nbrr-clat-status"
+  group: "IPv6 Operations"
+  type: "Working Group"
+  mail: "v6ops@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/v6ops/"
+  github: "buraglio/draft-nbrr-v6ops-clat-status"
+  latest: "https://buraglio.github.io/draft-nbrr-v6ops-clat-status/draft-nbrr-v6ops-clat-status.html"
 
 author:
  -
