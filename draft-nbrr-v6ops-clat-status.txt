@@ -2,13 +2,13 @@
 
 
 
-v6ops                                                        N. Buraglio
+IPv6 Operations                                              N. Buraglio
 Internet-Draft                                                R. Rearden
 Intended status: Informational                   Energy Sciences Network
-Expires: 2 January 2026                                      1 July 2025
+Expires: 3 January 2026                                      2 July 2025
 
 
-    Current State of CLAT Use and Performance on Non-Mobile Systems
+Current State of CLAT Availability and Performance on Non-Mobile Systems
                   draft-nbrr-v6ops-clat-status-latest
 
 Abstract
@@ -20,17 +20,18 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://github.com/buraglio/draft-v6ops-nbrr-clat-status.  Status
-   information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-nbrr-v6ops-clat-status/.
+   https://buraglio.github.io/draft-nbrr-v6ops-clat-status/draft-nbrr-
+   v6ops-clat-status.html.  Status information for this document may be
+   found at https://datatracker.ietf.org/doc/draft-nbrr-v6ops-clat-
+   status/.
 
-   Discussion of this document takes place on the v6ops Working Group
-   mailing list (mailto:v6ops@ietf.org), which is archived at
-   https://datatracker.ietf.org/wg/v6ops/about/.  Subscribe at
+   Discussion of this document takes place on the IPv6 Operations
+   Working Group mailing list (mailto:v6ops@ietf.org), which is archived
+   at https://mailarchive.ietf.org/arch/browse/v6ops/.  Subscribe at
    https://www.ietf.org/mailman/listinfo/v6ops/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/buraglio/draft-v6ops-nbrr-clat-status.
+   https://github.com/buraglio/draft-nbrr-v6ops-clat-status.
 
 Status of This Memo
 
@@ -47,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 January 2026.
+   This Internet-Draft will expire on 3 January 2026.
 
 Copyright Notice
 
@@ -66,10 +67,9 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Conventions and Definitions
+   2.  Terminology
    3.  Security Considerations
    4.  IANA Considerations
-   5.  Normative References
    Acknowledgments
    Authors' Addresses
 
@@ -77,13 +77,28 @@ Table of Contents
 
    TODO Introduction
 
-2.  Conventions and Definitions
+2.  Terminology
 
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in
-   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
+   PLAT: As defined in [RFC6877], PLAT is provider-side translator
+   (XLAT) that complies with [RFC6146].  It translates N:1 global IPv6
+   addresses to global IPv4 addresses, and vice versa.
+
+   CLAT: As defined in [RFC6877], CLAT is customer-side translator
+   (XLAT) that complies with [RFC6145].  It algorithmically translates
+   1:1 private IPv4 addresses to global IPv6 addresses, and vice versa.
+   The CLAT function is applicable to a router or an end-node such as a
+   mobile phone.  The CLAT should perform IP routing and forwarding to
+   facilitate packets forwarding through the stateless translation even
+   if it is an end-node.  The CLAT as a common home router or wireless
+   Third Generation Partnership Project (3GPP) router is expected to
+   perform gateway functions such as being a DHCP server and DNS proxy
+   for local clients.  The CLAT uses different IPv6 prefixes for CLAT-
+   side and PLAT-side IPv4 addresses and therefore does not comply with
+   the sentence "Both IPv4-translatable IPv6 addresses and
+   IPv4-converted IPv6 addresses SHOULD use the same prefix." in
+   Section 3.3 of [RFC6052].  The CLAT does not facilitate
+   communications between a local IPv4-only node and an IPv6- only node
+   on the Internet.
 
 3.  Security Considerations
 
@@ -92,17 +107,6 @@ Table of Contents
 4.  IANA Considerations
 
    This document has no IANA actions.
-
-5.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
 Acknowledgments
 
