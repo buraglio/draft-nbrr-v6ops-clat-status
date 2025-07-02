@@ -1,5 +1,5 @@
 ---
-title: "Current State of CLAT Availability and Performance on Non-Mobile Systems"
+title: "A Survey of the Current State of CLAT Availability and Performance on Non-Mobile Systems"
 abbrev: "CLAT Status"
 category: info
 
@@ -45,8 +45,14 @@ RFC6052:
 
 --- abstract
 
-TODO Abstract
-
+Since publication in April 2013, 464XLAT as defined in [RFC6877] has made a prolific impact on mobile networks wishing to
+implement endpoints without the presence of IPv4. This has allowed the IPv6 Internet to expand dramatically. In the same time frame, IPv6
+deployments across wireline and enterprise-style networks has slowly increased, experiencing a similar albeit slower
+increase in both dual-stack and, beginning around 2021, IPv6-only. This increase in IPv6-only deployments has highlighted the
+Importance of 464XLAT in enabling access to legacy resources. Inclusion of the translation 464XLAT technology, and specifically the 
+client side translator (CLAT) technology as either a default addition or a user-installable feature has been a notable enabler of a more seamless migration
+of off legacy IP. This document reports our findings in both the availability and operational performance of the CLAT
+feature and identifies remaining issues in providing ubiquitous and efficient CLAT support on a global scale.
 
 --- middle
 
@@ -55,6 +61,9 @@ TODO Abstract
 TODO Introduction
 
 # Terminology
+
+   464XLAT: A set of technologies that enable IPv6-only networks to access IPv4 services by 
+            combining stateful and stateless translation mechanisms as defined by [RFC6877].
 
    PLAT:   As defined in [RFC6877], PLAT is provider-side translator (XLAT) that complies with
            [RFC6146].  It translates N:1 global IPv6 addresses to global
