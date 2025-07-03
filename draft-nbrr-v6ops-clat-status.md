@@ -89,12 +89,25 @@ TODO Introduction
 
 # Availability 
 
+CLAT functionality has existed as a core, automatic function of the devices operating systems in mobile devices for many years and has been
+successfully deployed, supported, and expanded its footprint since its inception.  However, the availability within traditional desktop, laptop and general use
+operating systems has has a longer tail, with few commercial, off the shelf (COTS) operating environments possessing the same level of support for CLAT that exists in
+mobile deployments. Within the confines of general use operating systems, there are four major categories that perform 99% of daily-use user-facing functions. The
+following details the current support for CLAT in these four environments.
+
+## BSD
+
+## Linux
+
+## Microsoft Windows
+
+## Apple MacOS
+
 # Behavior and Performance
 
 # Security Considerations
 
-TODO Security
-
+None.
 
 # IANA Considerations
 
