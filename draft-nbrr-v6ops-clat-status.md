@@ -42,6 +42,8 @@ RFC6877:
 RFC6145:
 RFC6146:
 RFC6052:
+RFC8781:
+RFC7050:
 
 --- abstract
 
@@ -91,17 +93,27 @@ TODO Introduction
 
 CLAT functionality has existed as a core, automatic function of the devices operating systems in mobile devices for many years and has been
 successfully deployed, supported, and expanded its footprint since its inception.  However, the availability within traditional desktop, laptop and general use
-operating systems has has a longer tail, with few commercial, off the shelf (COTS) operating environments possessing the same level of support for CLAT that exists in
+operating systems has a longer tail, with few commercial, off the shelf (COTS) operating environments possessing the same level of support for CLAT that exists in
 mobile deployments. Within the confines of general use operating systems, there are four major categories that perform 99% of daily-use user-facing functions. The
 following details the current support for CLAT in these four environments.
 
 ## BSD
 
+BSD systems that support the ipfw toolkit have support for CLAT. This support must be manually enabled within the ipfw configuration and does not come on by default, allowing a more seamless
+user experience by supporting DHCP option 108 as defined by [RFC8925], pref64 as defined by [RFC8781], or DNS activation as defined by [RFC7050].
+
 ## Linux
+
+Linux has no official support. Linux systems may install 3rd party applications to support CLAT. This support must be manually installed and enabled within the configuration of the third party application. Third party support has varying levels of
+support with the most common relying on DNS activation as defined by [RFC7050]. There is ongoing work on several options for CLAT in Linux, and an effort to include it in the base operating system but currently this effort is incomplete.
 
 ## Microsoft Windows
 
+There is currently no public support for CLAT in any Microsoft Windows version that is usable within a LAN environment. Implementations exist within multiple versions of Microsoft Windows but are limited to Mobile / Cellular interfaces.
+
 ## Apple MacOS
+
+MacOS supports all manner of CLAT activation, and has a native implementation of the CLAT service as of MacOS 13.
 
 # Behavior and Performance
 
