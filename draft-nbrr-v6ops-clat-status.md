@@ -45,10 +45,9 @@ RFC6052:
 RFC8781:
 RFC7050:
 
-
 --- abstract
 
-Since publication in April 2013, 464XLAT as defined in [RFC6877] has made a prolific impact on mobile networks wishing to
+Since publication in April 2013, 464XLAT as defined in {{RFC6877}} has made a prolific impact on mobile networks wishing to
 implement endpoints without the presence of IPv4. This has allowed the IPv6 Internet to expand dramatically. In the same time frame, IPv6
 deployments across wireline and enterprise-style networks has slowly increased, experiencing a similar albeit slower
 increase in both dual-stack and, beginning around 2021, IPv6-only. This increase in IPv6-only deployments has highlighted the
@@ -66,14 +65,14 @@ TODO Introduction
 # Terminology
 
    464XLAT: A set of technologies that enable IPv6-only networks to access IPv4 services by
-            combining stateful and stateless translation mechanisms as defined by [RFC6877].
+            combining stateful and stateless translation mechanisms as defined by {{RFC6877}}.
 
-   PLAT:   As defined in [RFC6877], PLAT is provider-side translator (XLAT) that complies with
-           [RFC6146].  It translates N:1 global IPv6 addresses to global
+   PLAT:   As defined in {{RFC6877}}, PLAT is provider-side translator (XLAT) that complies with
+           {{RFC6146}}.  It translates N:1 global IPv6 addresses to global
            IPv4 addresses, and vice versa.
 
-   CLAT:    As defined in [RFC6877], CLAT is customer-side translator (XLAT) that complies with
-           [RFC6145].  It algorithmically translates 1:1 private IPv4
+   CLAT:    As defined in {{RFC6877}}, CLAT is customer-side translator (XLAT) that complies with
+           {{RFC6145}}.  It algorithmically translates 1:1 private IPv4
            addresses to global IPv6 addresses, and vice versa.  The CLAT
            function is applicable to a router or an end-node such as a
            mobile phone.  The CLAT should perform IP routing and
@@ -86,11 +85,11 @@ TODO Introduction
            and PLAT-side IPv4 addresses and therefore does not comply
            with the sentence "Both IPv4-translatable IPv6 addresses and
            IPv4-converted IPv6 addresses SHOULD use the same prefix." in
-           Section 3.3 of [RFC6052].  The CLAT does not facilitate
+           Section 3.3 of {{RFC6052}}.  The CLAT does not facilitate
            communications between a local IPv4-only node and an IPv6-
            only node on the Internet.
 
-# Availability 
+# Availability
 
 CLAT functionality has existed as a core, automatic function of the devices operating systems in mobile devices for many years and has been
 successfully deployed, supported, and expanded its footprint since its inception.  However, the availability within traditional desktop, laptop and general use
@@ -101,12 +100,12 @@ following details the current support for CLAT in these four environments.
 ## BSD
 
 BSD systems that support the ipfw toolkit have support for CLAT. This support must be manually enabled within the ipfw configuration and does not come on by default, allowing a more seamless
-user experience by supporting DHCP option 108 as defined by [RFC8925], pref64 as defined by [RFC8781], or DNS activation as defined by [RFC7050].
+user experience by supporting DHCP option 108 as defined by {{RFC8925}}, pref64 as defined by {{RFC8781}}, or DNS activation as defined by {{RFC7050}}.
 
 ## Linux
 
 Linux has no official support. Linux systems may install 3rd party applications to support CLAT. This support must be manually installed and enabled within the configuration of the third party application. Third party support has varying levels of
-support with the most common relying on DNS activation as defined by [RFC7050]. There is ongoing work on several options for CLAT in Linux, and an effort to include it in the base operating system but currently this effort is incomplete.
+support with the most common relying on DNS activation as defined by {{RFC7050}}. There is ongoing work on several options for CLAT in Linux, and an effort to include it in the base operating system but currently this effort is incomplete.
 
 ## Microsoft Windows
 
