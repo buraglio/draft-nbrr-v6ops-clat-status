@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-08T01:06:54.489652+00:00",
+  "timestamp": "2025-07-10T01:07:48.821025+00:00",
   "repo": "buraglio/draft-nbrr-v6ops-clat-status",
   "labels": [
     {
@@ -50,5 +50,48 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOPFPl0s6d28tJ",
+      "title": "Edited abstract",
+      "url": "https://github.com/buraglio/draft-nbrr-v6ops-clat-status/pull/1",
+      "state": "MERGED",
+      "author": "RyanRearden",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Made changes to sentence and phrase placements within the abstract.  ",
+      "createdAt": "2025-07-08T03:21:43Z",
+      "updatedAt": "2025-07-09T16:17:45Z",
+      "baseRepository": "buraglio/draft-nbrr-v6ops-clat-status",
+      "baseRefName": "main",
+      "baseRefOid": "54f5bc9f0387cd5e04290224795bf5be565fab77",
+      "headRepository": "buraglio/draft-nbrr-v6ops-clat-status",
+      "headRefName": "edit-branch",
+      "headRefOid": "4b3c90aa24cdce2a3578a1655b3816a7f2bac7eb",
+      "closedAt": "2025-07-09T16:17:45Z",
+      "mergedAt": "2025-07-09T16:17:45Z",
+      "mergedBy": "RyanRearden",
+      "mergeCommit": {
+        "oid": "9c32da282509d53daef66c6405075e1592a62383"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOPFPl0s6ytV6y",
+          "commit": {
+            "abbreviatedOid": "4b3c90a"
+          },
+          "author": "buraglio",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Looks good!",
+          "createdAt": "2025-07-08T15:50:35Z",
+          "updatedAt": "2025-07-08T15:50:35Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
 }
