@@ -47,7 +47,14 @@ RFC7050:
 
 --- abstract
 
-This document reports findings in the availability and operational performance of the client side translator (CLAT) feature within 464XLAT as defined in {{RFC6877}}. It also identifies remaining issues in providing ubiquitous and efficient CLAT support on a global scale. Since publication in April 2013, 464XLAT has made a significant impact on mobile networks wishing to implement endpoints purely with IPv6. This has allowed the IPv6 Internet to expand dramatically as well as increase IPv6 deployments across wireline and enterprise-style networks. The increase of IPv6-only deployments since around 2021 has highlighted the importance of the 464XLAT technology, and specifically CLAT technology, in enabling access to legacy IPv4-only resources. Inclusion of CLAT technology, as either a default addition or a user-installable feature, has been a notable enabler of a more seamless migration off of legacy IP.
+This document reports findings in the availability and operational performance of the client side translator (CLAT) feature 
+within 464XLAT as defined in {{RFC6877}}. It also identifies remaining issues in providing ubiquitous and efficient CLAT support
+on a global scale. Since publication in April 2013, 464XLAT has made a significant impact on mobile networks wishing to 
+implement endpoints purely with IPv6. This has allowed the IPv6 Internet to expand dramatically as well as increase IPv6 
+deployments across wireline and enterprise-style networks. The increase of IPv6-only deployments since around 2021 has 
+highlighted the importance of the 464XLAT technology, and specifically CLAT technology, in enabling access to legacy IPv4-only 
+resources. Inclusion of CLAT technology, as either a default addition or a user-installable feature, has been a notable enabler
+of a more seamless migration off of legacy IP.
 
 --- middle
 
