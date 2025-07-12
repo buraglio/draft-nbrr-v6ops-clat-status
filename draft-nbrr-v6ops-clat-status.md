@@ -43,7 +43,8 @@ informative:
    RFC6052:
    RFC8781:
    RFC7050:
-
+   RFC8925:
+   
 --- abstract
 
 This document reports findings in the availability and operational performance of the client side translator (CLAT) feature
