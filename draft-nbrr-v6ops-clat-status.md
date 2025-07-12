@@ -51,16 +51,17 @@ This document reports findings in the availability and operational performance o
 within 464XLAT as defined in {{RFC6877}}. It also identifies remaining issues in providing ubiquitous and efficient CLAT support
 on a global scale. Since publication in April 2013, 464XLAT has made a significant impact on mobile networks wishing to
 implement endpoints purely with IPv6. This has allowed the IPv6 Internet to expand dramatically as well as increase IPv6
-deployments across wireline and enterprise-style networks. The increase of IPv6-only deployments since around 2021 has
-highlighted the importance of the 464XLAT technology, and specifically CLAT technology, in enabling access to legacy IPv4-only
-resources. Inclusion of CLAT technology, as either a default addition or a user-installable feature, has been a notable enabler
-of a more seamless migration off of legacy IP.
+deployments across wireline and enterprise-style networks. 
 
 --- middle
 
 # Introduction
 
-TODO Introduction
+The increase of IPv6-only deployments since around 2021 has highlighted the importance of the 464XLAT technology, and specifically CLAT technology, 
+in enabling access to legacy IPv4-only resources. Inclusion of CLAT technology, as either a default addition or a user-installable feature, has been a notable enabler
+of a more seamless migration off of legacy IP. The availability of client side translation has proliferated over the last several years, and many options and
+implementations exist. This document details the findings of an availability study of major non-mobile operating systems and their status as a feature availability. 
+Additionally, basic functionality and performance is tested between varying systems using common performance testing tools.
 
 # Terminology
 
