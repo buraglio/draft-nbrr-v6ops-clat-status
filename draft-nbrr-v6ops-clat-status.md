@@ -114,7 +114,7 @@ checks for a NAT64 translator and configures the BSD packet filter to translate 
 Linux has no official support. Linux systems may install 3rd party applications to support CLAT. This support must be manually installed and enabled within the configuration of the third party application. Third party support has varying levels of
 support with the most common relying on DNS activation as defined by {{RFC7050}}. There is ongoing work on several options for CLAT in Linux, and an effort to include it in the base operating system but currently this effort is incomplete.
 
-An open source SIIT-DC, {{LinuxCLAT}} implementation for Linux. 
+An open source SIIT-DC, {{LinuxCLAT}} implementation for Linux.
 
 ## Microsoft Windows
 
