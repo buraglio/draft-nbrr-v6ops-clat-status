@@ -131,6 +131,133 @@ In these tests, a common set of parameters were used to aid in consistent outcom
 
 ## Linux to Linux ()
 
+~~~~~~~~~~
+                    Network Throughput: Sender Bytes Over Time TCP            
+    68537552 +---------------------------------------------------------+
+             |  o⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅oo                          |   
+    59970358 |  ⋅                            ⋅o                        |   
+    51403164 |  ⋅                              ⋅oo⋅o                   |   
+             | ⋅                                    ⋅    ⋅oo           |   
+    42835970 | o                                     oo⋅o   ⋅          |   
+             |                                              ⋅          |   
+    34268776 |                                               ⋅         |   
+             |                                               o         |   
+    25701582 |                                                ⋅        |   
+    17134388 |                                                 o       |   
+             |                                                         |   
+     8567194 |                                                         |   
+             |                                                         |   
+           0 +---------------------------------------------------------+
+             0       5        10      15      20      25       30      35  
+
+X Axis: Time (seconds)
+Y Axis: Bytes Transmitted
+
+                  Network Throughput: Receiver Bytes Over Time TCP          
+    68537552 +---------------------------------------------------------+
+             |                                                         |   
+    59970358 |                                                         |   
+    51403164 |                                                         |   
+             |                                                         |   
+    42835970 |                                                         |   
+             |                                                         |   
+    34268776 |                                                         |   
+             |                                                         |   
+    25701582 |                                                         |   
+    17134388 |                                                         |   
+             |                                                         |   
+     8567194 | oo                                                      |   
+             |   ⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅oo⋅o⋅oo⋅o⋅oo⋅o⋅oo⋅o⋅o       |   
+           0 +---------------------------------------------------------+
+             0       5        10      15      20      25       30      35  
+
+X Axis: Time (seconds)
+Y Axis: Bytes Received
+
+                  Network Throughput: Sender Bytes Over Time UDP           
+    137944 +-----------------------------------------------------------+
+           | oo⋅o⋅o⋅oo⋅o⋅oo⋅o⋅o⋅oo⋅o⋅oo⋅o⋅o⋅oo⋅o⋅oo⋅o⋅o⋅oo⋅o⋅oo        |   
+    120701 |                                                           |   
+           |                                                           |   
+    103458 |                                                           |   
+     86215 |                                                           |   
+           |                                                           |   
+     68972 |                                                           |   
+           |                                                           |   
+     51729 |                                                           |   
+           |                                                           |   
+     34486 |                                                           |   
+     17243 |                                                           |   
+           |                                                           |   
+         0 +-----------------------------------------------------------+
+           0        5       10       15      20       25      30       35  
+
+X Axis: Time (seconds)
+Y Axis: Bytes Transmitted
+
+                  Network Throughput: Receiver Bytes Over Time UDP           
+    137944 +-----------------------------------------------------------+
+           | oo⋅o⋅o⋅oo⋅o⋅oo⋅o⋅o⋅oo⋅o⋅oo⋅o⋅o⋅oo⋅o⋅oo⋅o⋅o⋅oo⋅o⋅oo        |   
+    120701 |                                                           |   
+           |                                                           |   
+    103458 |                                                           |   
+     86215 |                                                           |   
+           |                                                           |   
+     68972 |                                                           |   
+           |                                                           |   
+     51729 |                                                           |   
+           |                                                           |   
+     34486 |                                                           |   
+     17243 |                                                           |   
+           |                                                           |   
+         0 +-----------------------------------------------------------+
+           0        5       10       15      20       25      30       35  
+
+X Axis: Time (seconds)
+Y Axis: Bytes Received
+
+                Network Quality: Packet Loss Percentage Over Time          
+       1 +-------------------------------------------------------------+
+         |                                                             |   
+         |                                                             |   
+     0.5 |                                                             |   
+         |                                                             |   
+         |                                                             |   
+         |                                                             |   
+       0 | o⋅oo⋅o⋅o⋅oo⋅o⋅o⋅oo⋅o⋅o⋅o⋅oo⋅o⋅o⋅oo⋅o⋅o⋅o⋅oo⋅o⋅o⋅oo⋅o        |   
+         |                                                             |   
+         |                                                             |   
+     0.5 |                                                             |   
+         |                                                             |   
+         |                                                             |   
+         |                                                             |   
+       1 +-------------------------------------------------------------+
+         0        5        10       15      20       25       30       35  
+
+X Axis: Time (seconds)
+Y Axis: Packet Loss (%)
+
+               Network Quality: Jitter Measurements Over Time UDP           
+     0.18 +------------------------------------------------------------+
+          |                                     o                      |   
+     0.16 |                                     ⋅                      |   
+     0.14 |                                     ⋅                      |   
+          |                                     ⋅⋅                     |   
+     0.12 |      o                              ⋅⋅                     |   
+      0.1 |      ⋅               o              ⋅⋅       o             |   
+          |      ⋅⋅              ⋅             ⋅ ⋅       ⋅             |   
+     0.08 |     ⋅ ⋅             ⋅⋅             ⋅ ⋅      ⋅ ⋅  o         |   
+     0.06 |     ⋅ ⋅             ⋅ ⋅            ⋅ ⋅      ⋅ ⋅  ⋅         |   
+          | o   ⋅ ⋅             ⋅ ⋅          o ⋅  ⋅     ⋅ ⋅ ⋅ ⋅        |   
+     0.04 | ⋅   ⋅  ⋅      o     ⋅ o  ⋅o     ⋅ ⋅⋅  ⋅     ⋅ ⋅ ⋅ o        |   
+     0.02 |  ⋅ ⋅   ⋅ ⋅o  ⋅ ⋅   ⋅   ⋅o  ⋅oo⋅o   o  ⋅⋅o  ⋅   ⋅           |   
+          |  o⋅o   oo  ⋅o  o⋅o⋅o                  o  ⋅oo   o           |   
+        0 +------------------------------------------------------------+
+          0        5       10       15       20       25      30       35  
+
+X Axis: Time (seconds)
+Y Axis: Jitter (ms)
+~~~~~~~~~~
 
 ## MacOS to MacOS (version 15.5)
 
