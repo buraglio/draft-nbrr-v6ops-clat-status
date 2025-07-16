@@ -1,0 +1,274 @@
+
+
+
+
+IPv6 Operations                                              N. Buraglio
+Internet-Draft                                                R. Rearden
+Intended status: Informational                   Energy Sciences Network
+Expires: 17 January 2026                                    16 July 2025
+
+
+ A Survey of the Current State of CLAT Availability and Performance on
+                           Non-Mobile Systems
+                  draft-nbrr-v6ops-clat-status-latest
+
+Abstract
+
+   This document reports findings in the availability and operational
+   performance of the client side translator (CLAT) feature within
+   464XLAT as defined in [RFC6877].  It also identifies remaining issues
+   in providing ubiquitous and efficient CLAT support on a global scale.
+   Since publication in April 2013, 464XLAT has made a significant
+   impact on mobile networks wishing to implement endpoints purely with
+   IPv6.  This has allowed the IPv6 Internet to expand dramatically as
+   well as increase IPv6 deployments across wireline and enterprise-
+   style networks.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://buraglio.github.io/draft-nbrr-v6ops-clat-status/draft-nbrr-
+   v6ops-clat-status.html.  Status information for this document may be
+   found at https://datatracker.ietf.org/doc/draft-nbrr-v6ops-clat-
+   status/.
+
+   Discussion of this document takes place on the IPv6 Operations
+   Working Group mailing list (mailto:v6ops@ietf.org), which is archived
+   at https://mailarchive.ietf.org/arch/browse/v6ops/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/v6ops/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/buraglio/draft-nbrr-v6ops-clat-status.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 17 January 2026.
+
+Copyright Notice
+
+   Copyright (c) 2025 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Terminology
+   3.  Availability
+     3.1.  BSD
+     3.2.  Linux
+     3.3.  Microsoft Windows
+     3.4.  Apple MacOS
+   4.  Behavior and Performance
+     4.1.  Linux to Linux ()
+     4.2.  MacOS to MacOS (version 15.5)
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
+   Acknowledgments
+   Authors' Addresses
+
+1.  Introduction
+
+   The increase of IPv6-only deployments since around 2021 has
+   highlighted the importance of the 464XLAT technology, and
+   specifically CLAT technology, in enabling access to legacy IPv4-only
+   resources.  Inclusion of CLAT technology, as either a default
+   addition or a user-installable feature, has been a notable enabler of
+   a more seamless migration off of legacy IP.  The availability of
+   client side translation has proliferated over the last several years,
+   and many options and implementations exist.  This document details
+   the findings of an availability study of major non-mobile operating
+   systems and their status as a feature availability.  Additionally,
+   basic functionality and performance is tested between varying systems
+   using common performance testing tools.
+
+2.  Terminology
+
+   464XLAT: A set of technologies that enable IPv6-only networks to
+   access IPv4 services by combining stateful and stateless translation
+   mechanisms as defined by [RFC6877].
+
+   PLAT: As defined in [RFC6877], PLAT is provider-side translator
+   (XLAT) that complies with [RFC6146].  It translates N:1 global IPv6
+   addresses to global IPv4 addresses, and vice versa.
+
+   CLAT: As defined in [RFC6877], CLAT is customer-side translator
+   (XLAT) that complies with [RFC6145].  It algorithmically translates
+   1:1 private IPv4 addresses to global IPv6 addresses, and vice versa.
+   The CLAT function is applicable to a router or an end-node such as a
+   mobile phone.  The CLAT should perform IP routing and forwarding to
+   facilitate packets forwarding through the stateless translation even
+   if it is an end-node.  The CLAT as a common home router or wireless
+   Third Generation Partnership Project (3GPP) router is expected to
+   perform gateway functions such as being a DHCP server and DNS proxy
+   for local clients.  The CLAT uses different IPv6 prefixes for CLAT-
+   side and PLAT-side IPv4 addresses and therefore does not comply with
+   the sentence "Both IPv4-translatable IPv6 addresses and
+   IPv4-converted IPv6 addresses SHOULD use the same prefix." in
+   Section 3.3 of [RFC6052].  The CLAT does not facilitate
+   communications between a local IPv4-only node and an IPv6- only node
+   on the Internet.
+
+3.  Availability
+
+   CLAT functionality has existed as a core, automatic function of the
+   devices operating systems in mobile devices for many years and has
+   been successfully deployed, supported, and expanded its footprint
+   since its inception.  However, the availability within traditional
+   desktop, laptop and general use operating systems has a longer tail,
+   with few commercial, off the shelf (COTS) operating environments
+   possessing the same level of support for CLAT that exists in mobile
+   deployments.  Within the confines of general use operating systems,
+   there are four major categories that perform 99% of daily-use user-
+   facing functions.  The following details the current support for CLAT
+   in these four environments.
+
+3.1.  BSD
+
+   BSD systems that support the ipfw toolkit have support for CLAT.
+   This support must be manually enabled within the ipfw configuration
+   and does not come on by default, allowing a more seamless user
+   experience by supporting DHCP option 108 as defined by [RFC8925],
+   pref64 as defined by [RFC8781], or DNS activation as defined by
+   [RFC7050].
+
+   Within the official Concurrent Version System ports repository, there
+   is a CLAT configuration daemon named gelatod which checks for a NAT64
+   translator and configures the BSD packet filter to translate IPv4
+   packets into IPv6 packets.
+
+3.2.  Linux
+
+   Linux has no official support.  Linux systems may install 3rd party
+   applications to support CLAT.  This support must be manually
+   installed and enabled within the configuration of the third party
+   application.  Third party support has varying levels of support with
+   the most common relying on DNS activation as defined by [RFC7050].
+   There is ongoing work on several options for CLAT in Linux, and an
+   effort to include it in the base operating system but currently this
+   effort is incomplete.
+
+   An open source SIIT-DC, [LinuxCLAT] implementation for Linux.
+
+3.3.  Microsoft Windows
+
+   There is currently no public support for CLAT in any Microsoft
+   Windows version that is usable within a LAN environment.
+   Implementations exist within multiple versions of Microsoft Windows
+   but are limited to Mobile / Cellular interfaces.
+
+3.4.  Apple MacOS
+
+   MacOS supports all manner of CLAT activation, and has a native, non-
+   mobile-device implementation of the CLAT service as of MacOS 13.
+
+4.  Behavior and Performance
+
+   Performance of CLAT implementations across major operating systems
+   can and will have any number of factors affecting the overall
+   performance of the internal operation.  However, some simple baseline
+   tests can be run to ascertain fundamental expectations.  It should be
+   noted, however, that on commodity desktop systems performance is not
+   often a notable factor unless there are notable and significant
+   amounts of packet loss which can be attributes specifically to the
+   internal CLAT process.  This is uncommon, however, as it is far more
+   likely that upstream problems would be the root case of noticeable
+   performance.  In these tests, a common set of parameters were used to
+   aid in consistent outcomes.  Tools involved were the same across all
+   platforms, and based on IPerf3, a common bandwidth testing utility.
+
+4.1.  Linux to Linux ()
+
+4.2.  MacOS to MacOS (version 15.5)
+
+5.  Security Considerations
+
+   None.
+
+6.  IANA Considerations
+
+   This document has no IANA actions.
+
+7.  References
+
+7.1.  Normative References
+
+   [RFC6877]  Mawatari, M., Kawashima, M., and C. Byrne, "464XLAT:
+              Combination of Stateful and Stateless Translation",
+              RFC 6877, DOI 10.17487/RFC6877, April 2013,
+              <https://www.rfc-editor.org/rfc/rfc6877>.
+
+7.2.  Informative References
+
+   [LinuxCLAT]
+              "CLAT / SIIT-DC Edge Relay implementation for Linux",
+              n.d., <https://github.com/toreanderson/clatd>.
+
+   [RFC6052]  Bao, C., Huitema, C., Bagnulo, M., Boucadair, M., and X.
+              Li, "IPv6 Addressing of IPv4/IPv6 Translators", RFC 6052,
+              DOI 10.17487/RFC6052, October 2010,
+              <https://www.rfc-editor.org/rfc/rfc6052>.
+
+   [RFC6145]  Li, X., Bao, C., and F. Baker, "IP/ICMP Translation
+              Algorithm", RFC 6145, DOI 10.17487/RFC6145, April 2011,
+              <https://www.rfc-editor.org/rfc/rfc6145>.
+
+   [RFC6146]  Bagnulo, M., Matthews, P., and I. van Beijnum, "Stateful
+              NAT64: Network Address and Protocol Translation from IPv6
+              Clients to IPv4 Servers", RFC 6146, DOI 10.17487/RFC6146,
+              April 2011, <https://www.rfc-editor.org/rfc/rfc6146>.
+
+   [RFC7050]  Savolainen, T., Korhonen, J., and D. Wing, "Discovery of
+              the IPv6 Prefix Used for IPv6 Address Synthesis",
+              RFC 7050, DOI 10.17487/RFC7050, November 2013,
+              <https://www.rfc-editor.org/rfc/rfc7050>.
+
+   [RFC8781]  Colitti, L. and J. Linkova, "Discovering PREF64 in Router
+              Advertisements", RFC 8781, DOI 10.17487/RFC8781, April
+              2020, <https://www.rfc-editor.org/rfc/rfc8781>.
+
+   [RFC8925]  Colitti, L., Linkova, J., Richardson, M., and T.
+              Mrugalski, "IPv6-Only Preferred Option for DHCPv4",
+              RFC 8925, DOI 10.17487/RFC8925, October 2020,
+              <https://www.rfc-editor.org/rfc/rfc8925>.
+
+Acknowledgments
+
+   TODO acknowledge.
+
+Authors' Addresses
+
+   Nick Buraglio
+   Energy Sciences Network
+   Email: buraglio@forwardingplane.net
+
+
+   Ryan Rearden
+   Energy Sciences Network
+   Email: reardenrt@gmail.com
