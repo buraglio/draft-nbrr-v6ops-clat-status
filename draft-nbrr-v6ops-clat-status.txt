@@ -5,7 +5,7 @@
 IPv6 Operations                                              N. Buraglio
 Internet-Draft                                                R. Rearden
 Intended status: Informational                   Energy Sciences Network
-Expires: 17 January 2026                                    16 July 2025
+Expires: 22 January 2026                                    21 July 2025
 
 
  A Survey of the Current State of CLAT Availability and Performance on
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 January 2026.
+   This Internet-Draft will expire on 22 January 2026.
 
 Copyright Notice
 
@@ -97,16 +97,17 @@ Table of Contents
 
    The increase of IPv6-only deployments since around 2021 has
    highlighted the importance of the 464XLAT technology, and
-   specifically CLAT technology, in enabling access to legacy IPv4-only
-   resources.  Inclusion of CLAT technology, as either a default
-   addition or a user-installable feature, has been a notable enabler of
-   a more seamless migration off of legacy IP.  The availability of
-   client side translation has proliferated over the last several years,
-   and many options and implementations exist.  This document details
-   the findings of an availability study of major non-mobile operating
-   systems and their status as a feature availability.  Additionally,
-   basic functionality and performance is tested between varying systems
-   using common performance testing tools.
+   specifically customer-side address translator 9CLAT) component, in
+   enabling access to legacy IPv4-only resources.  Inclusion of CLAT
+   technology, as either a default addition or a user-installable
+   feature, has been a notable enabler of a more seamless migration off
+   of legacy IP.  The availability of client side translation has
+   proliferated over the last several years, and many options and
+   implementations exist.  This document details the findings of an
+   availability study of major non-mobile operating systems and their
+   status as a feature availability.  Additionally, basic functionality
+   and performance is tested between varying systems using common
+   performance testing tools.
 
 2.  Terminology
 
@@ -159,9 +160,9 @@ Table of Contents
    [RFC7050].
 
    Within the official Concurrent Version System ports repository, there
-   is a CLAT configuration daemon named gelatod which checks for a NAT64
-   translator and configures the BSD packet filter to translate IPv4
-   packets into IPv6 packets.
+   is a CLAT configuration daemon named [Gelatod] which checks for a
+   NAT64 translator and configures the BSD packet filter to translate
+   IPv4 packets into IPv6 packets.
 
 3.2.  Linux
 
@@ -195,13 +196,13 @@ Table of Contents
    performance of the internal operation.  However, some simple baseline
    tests can be run to ascertain fundamental expectations.  It should be
    noted, however, that on commodity desktop systems performance is not
-   often a notable factor unless there are notable and significant
-   amounts of packet loss which can be attributes specifically to the
+   often a significant factor unless there are notable and significant
+   amounts of packet loss which can be attributed specifically to the
    internal CLAT process.  This is uncommon, however, as it is far more
    likely that upstream problems would be the root case of noticeable
    performance.  In these tests, a common set of parameters were used to
    aid in consistent outcomes.  Tools involved were the same across all
-   platforms, and based on IPerf3, a common bandwidth testing utility.
+   platforms, and based on [IPerf3], a common bandwidth testing utility.
 
 4.1.  Linux to Linux ()
 
@@ -351,6 +352,12 @@ Y Axis: Jitter (ms)
               <https://www.rfc-editor.org/rfc/rfc6877>.
 
 7.2.  Informative References
+
+   [Gelatod]  "CLAT configuration daemon for OpenBSD", n.d.,
+              <https://codeberg.org/fobser/gelatod>.
+
+   [IPerf3]   "IPERF3: A TCP, UDP, and SCTP network bandwidth
+              measurement tool", n.d., <https://github.com/esnet/iperf>.
 
    [LinuxCLAT]
               "CLAT / SIIT-DC Edge Relay implementation for Linux",
