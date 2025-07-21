@@ -50,7 +50,7 @@ informative:
    Gelatod:
       target: https://codeberg.org/fobser/gelatod
       title: "CLAT configuration daemon for OpenBSD"
-    IPerf3:
+   IPerf3:
       target: https://github.com/esnet/iperf
       title: "IPERF3: A TCP, UDP, and SCTP network bandwidth measurement tool"
 
