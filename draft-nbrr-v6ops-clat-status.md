@@ -47,6 +47,12 @@ informative:
    LinuxCLAT:
       target: https://github.com/toreanderson/clatd
       title: "CLAT / SIIT-DC Edge Relay implementation for Linux"
+   Gelatod:
+      target: https://codeberg.org/fobser/gelatod
+      title: "CLAT configuration daemon for OpenBSD"
+    IPerf3:
+      target: https://github.com/esnet/iperf
+      title: "IPERF3: A TCP, UDP, and SCTP network bandwidth measurement tool"
 
 --- abstract
 
@@ -60,9 +66,7 @@ deployments across wireline and enterprise-style networks.
 
 # Introduction
 
-The increase of IPv6-only deployments since around 2021 has highlighted the importance of the 464XLAT technology, and specifically CLAT technology,
-in enabling access to legacy IPv4-only resources. Inclusion of CLAT technology, as either a default addition or a user-installable feature, has been a notable enabler
-of a more seamless migration off of legacy IP. The availability of client side translation has proliferated over the last several years, and many options and
+The increase of IPv6-only deployments since around 2021 has highlighted the importance of the 464XLAT technology, and specifically customer-side address translator 9CLAT) component, in enabling access to legacy IPv4-only resources. Inclusion of CLAT technology, as either a default addition or a user-installable feature, has been a notable enabler of a more seamless migration off of legacy IP. The availability of client side translation has proliferated over the last several years, and many options and
 implementations exist. This document details the findings of an availability study of major non-mobile operating systems and their status as a feature availability.
 Additionally, basic functionality and performance is tested between varying systems using common performance testing tools.
 
@@ -106,7 +110,7 @@ following details the current support for CLAT in these four environments.
 BSD systems that support the ipfw toolkit have support for CLAT. This support must be manually enabled within the ipfw configuration and does not come on by default, allowing a more seamless
 user experience by supporting DHCP option 108 as defined by {{RFC8925}}, pref64 as defined by {{RFC8781}}, or DNS activation as defined by {{RFC7050}}.
 
-Within the official Concurrent Version System ports repository, there is a CLAT configuration daemon named gelatod which
+Within the official Concurrent Version System ports repository, there is a CLAT configuration daemon named {{Gelatod}} which
 checks for a NAT64 translator and configures the BSD packet filter to translate IPv4 packets into IPv6 packets.
 
 ## Linux
@@ -126,8 +130,8 @@ MacOS supports all manner of CLAT activation, and has a native, non-mobile-devic
 
 # Behavior and Performance
 
-Performance of CLAT implementations across major operating systems can and will have any number of factors affecting the overall performance of the internal operation. However, some simple baseline tests can be run to ascertain fundamental expectations. It should be noted, however, that on commodity desktop systems performance is not often a notable factor unless there are notable and significant amounts of packet loss which can be attributes specifically to the internal CLAT process. This is uncommon, however, as it is far more likely that upstream problems would be the root case of noticeable performance.
-In these tests, a common set of parameters were used to aid in consistent outcomes. Tools involved were the same across all platforms, and based on IPerf3, a common bandwidth testing utility.
+Performance of CLAT implementations across major operating systems can and will have any number of factors affecting the overall performance of the internal operation. However, some simple baseline tests can be run to ascertain fundamental expectations. It should be noted, however, that on commodity desktop systems performance is not often a significant factor unless there are notable and significant amounts of packet loss which can be attributed specifically to the internal CLAT process. This is uncommon, however, as it is far more likely that upstream problems would be the root case of noticeable performance.
+In these tests, a common set of parameters were used to aid in consistent outcomes. Tools involved were the same across all platforms, and based on {{IPerf3}}, a common bandwidth testing utility.
 
 ## Linux to Linux ()
 
