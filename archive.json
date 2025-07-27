@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-24T01:10:20.864978+00:00",
+  "timestamp": "2025-07-27T01:16:55.832402+00:00",
   "repo": "buraglio/draft-nbrr-v6ops-clat-status",
   "labels": [
     {
@@ -176,6 +176,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOPFPl0s6gewHT",
+      "title": "fixed typo in introduction and recreated iperf graphs",
+      "url": "https://github.com/buraglio/draft-nbrr-v6ops-clat-status/pull/4",
+      "state": "OPEN",
+      "author": "RyanRearden",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-07-24T15:39:53Z",
+      "updatedAt": "2025-07-26T14:21:56Z",
+      "baseRepository": "buraglio/draft-nbrr-v6ops-clat-status",
+      "baseRefName": "main",
+      "baseRefOid": "e584a5302f73f68bfbbb86c464f106da8927f1b4",
+      "headRepository": "buraglio/draft-nbrr-v6ops-clat-status",
+      "headRefName": "edit-branch",
+      "headRefOid": "57c060f195e5627a0fb60444d089368465f4c942",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
